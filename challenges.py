@@ -16,7 +16,7 @@ def TotalValueOfCharacters():
     result = upper_to_lowercase(user_input)
     joined_result = ''.join(result)
 
-    if(user_input.casefold() == joined_result.casefold()):
+    if(user_input != joined_result):
         print(f'{user_input} was converted to {joined_result}')
     else:
         print('There was no conversion necessary.')
@@ -26,7 +26,7 @@ def TotalValueOfCharacters():
 
     print(f'The value of the sequence {joined_result} is: {sum}')
 
-    return 0
+    return
 
 
 # Requesting user input
