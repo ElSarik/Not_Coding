@@ -59,5 +59,19 @@ def BankCoins(GRK):
     return total_change
 
 
+# Requesting user input
+def request_input():
+
+    while True:
+        try:
+            GRK = int(input('Please insert your requested amount: '))
+            break
+
+        except:
+            print('WARNING: Your input must be an integer number!\n')
+
+    return GRK
+
+
 if __name__ == '__main__':
     main()
