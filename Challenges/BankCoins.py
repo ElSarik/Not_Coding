@@ -3,6 +3,11 @@ def main():
     GRK = request_input()
     change, detailed_change = BankCoins(GRK)
 
+    print(f'change({GRK}) => {change} : {detailed_change[0]} of 500 GRK | ', 
+          f'{detailed_change[1]} of 100 GRK | {detailed_change[2]} of 25 GRK |',
+          f'{detailed_change[3]} of 10 GRK | {detailed_change[4]} of 5 GRK |',
+          f'{detailed_change[5]} of 1 GRK')
+
     return
 
 
