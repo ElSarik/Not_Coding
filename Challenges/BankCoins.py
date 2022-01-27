@@ -2,8 +2,10 @@ def main():
     return
 
 
+# change calculation
 def BankCoins(GRK):
     
+    # contains the total amount of change for each currency value
     detailed_change = [0, 0, 0, 0, 0, 0]
 
     total_change = 0
