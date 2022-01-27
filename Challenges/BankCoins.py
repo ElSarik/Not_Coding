@@ -4,6 +4,8 @@ def main():
 
 def BankCoins(GRK):
     
+    detailed_change = [0, 0, 0, 0, 0, 0]
+
     total_change = 0
     change = 0
     
@@ -13,6 +15,7 @@ def BankCoins(GRK):
         GRK -= change * 500
 
         total_change += change
+        detailed_change[0] = change
         change = 0
 
 
@@ -21,6 +24,7 @@ def BankCoins(GRK):
         GRK -= change * 100
 
         total_change += change
+        detailed_change[1] = change
         change = 0
 
 
@@ -29,6 +33,7 @@ def BankCoins(GRK):
         GRK -= change * 25
 
         total_change += change
+        detailed_change[2] = change
         change = 0
 
 
@@ -37,6 +42,7 @@ def BankCoins(GRK):
         GRK -= change * 10
 
         total_change += change
+        detailed_change[3] = change
         change = 0
 
 
@@ -45,6 +51,7 @@ def BankCoins(GRK):
         GRK -= change * 5
 
         total_change += change
+        detailed_change[4] = change
         change = 0
 
 
@@ -53,10 +60,11 @@ def BankCoins(GRK):
         GRK -= change * 1
 
         total_change += change
+        detailed_change[5] = change
         change = 0
 
 
-    return total_change
+    return total_change, detailed_change
 
 
 # Requesting user input
