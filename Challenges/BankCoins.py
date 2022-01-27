@@ -1,4 +1,8 @@
 def main():
+
+    GRK = request_input()
+    change, detailed_change = BankCoins(GRK)
+
     return
 
 
