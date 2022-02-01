@@ -14,23 +14,32 @@ def TaxCalculation(income):
 
     # spliting the income based on the income_caps
     income_split = []
+    
+    # calculating cap difference between 0 and first cap
+    cap_difference = income_caps[0] - 0
 
     total_tax = 0
 
-    for cap in income_caps:
-        if income > cap:
-            income_split.append(cap)
-            income -= cap
+    for index, cap in enumerate(income_caps):
+        
+        if income > cap_difference:
+            if index == 0:
+                income_split.append(cap_difference)
+                income -= cap_difference
+            else:
+                cap_difference = cap - income_caps[index - 1]
+                income_split.append(cap_difference)
+                income -= cap_difference
 
     # adding the remaining income
-    income_split.append(income)
+    if income > 0:
+        income_split.append(income)
 
     # calculating the tax based on each cap
     for index, split in enumerate(income_split):
         tax = split * tax_rates[index]
         total_tax += tax
 
-    
     return total_tax
 
 
