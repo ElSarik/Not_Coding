@@ -22,15 +22,17 @@ def TaxCalculation(income):
 
     for index, cap in enumerate(income_caps):
         
-        if income > cap_difference:
-            if index == 0:
+        if index == 0:
+            if income > cap_difference:
                 income_split.append(cap_difference)
                 income -= cap_difference
-            else:
-                cap_difference = cap - income_caps[index - 1]
+        else:
+            cap_difference = cap - income_caps[index - 1]
+            
+            if income > cap_difference:
                 income_split.append(cap_difference)
                 income -= cap_difference
-
+            
     # adding the remaining income
     if income > 0:
         income_split.append(income)
